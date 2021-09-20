@@ -1,0 +1,138 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="17701" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="WFi-U9-DXV">
+    <device id="retina6_1" orientation="portrait" appearance="light"/>
+    <dependencies>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="17703"/>
+        <capability name="Safe area layout guides" minToolsVersion="9.0"/>
+        <capability name="System colors in document resources" minToolsVersion="11.0"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <scenes>
+        <!--Main Page View Controller-->
+        <scene sceneID="SiT-XQ-35g">
+            <objects>
+                <viewController id="E5V-tT-bSg" customClass="MainPageViewController" customModule="Location_Manager" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="rET-Mz-jCJ">
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="bsH-J2-2dc">
+                                <rect key="frame" x="167" y="408" width="80" height="80"/>
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="80" id="JKm-jb-f0e"/>
+                                    <constraint firstAttribute="height" constant="80" id="rb7-hh-8ca"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" type="system" weight="semibold" pointSize="29"/>
+                                <state key="normal" title="Yes">
+                                    <color key="titleColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                </state>
+                                <connections>
+                                    <action selector="yesButton:" destination="E5V-tT-bSg" eventType="touchUpInside" id="Sd3-7w-5a3"/>
+                                    <segue destination="BYZ-38-t0r" kind="push" id="Gjk-9R-o0A"/>
+                                </connections>
+                            </button>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="READY  TO TRACK?" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Xa9-8d-0FM">
+                                <rect key="frame" x="129" y="188" width="156" height="20.5"/>
+                                <fontDescription key="fontDescription" type="system" weight="semibold" pointSize="17"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                        </subviews>
+                        <viewLayoutGuide key="safeArea" id="otF-AU-AJE"/>
+                        <color key="backgroundColor" systemColor="systemOrangeColor"/>
+                        <constraints>
+                            <constraint firstItem="Xa9-8d-0FM" firstAttribute="top" secondItem="otF-AU-AJE" secondAttribute="top" constant="100" id="57F-qm-JLT"/>
+                            <constraint firstItem="otF-AU-AJE" firstAttribute="trailing" secondItem="Xa9-8d-0FM" secondAttribute="trailing" constant="129" id="b74-l7-bgf"/>
+                            <constraint firstItem="bsH-J2-2dc" firstAttribute="centerY" secondItem="rET-Mz-jCJ" secondAttribute="centerY" id="chx-xE-WJV"/>
+                            <constraint firstItem="bsH-J2-2dc" firstAttribute="centerX" secondItem="rET-Mz-jCJ" secondAttribute="centerX" id="kMi-ye-JcE"/>
+                            <constraint firstItem="Xa9-8d-0FM" firstAttribute="leading" secondItem="otF-AU-AJE" secondAttribute="leading" constant="129" id="zVQ-TI-xrW"/>
+                        </constraints>
+                    </view>
+                    <navigationItem key="navigationItem" id="ntm-mN-1V6"/>
+                    <connections>
+                        <outlet property="yesButtonPressed" destination="bsH-J2-2dc" id="tgK-M1-XpV"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="iLE-Xt-nTI" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="176.81159420289856" y="86.383928571428569"/>
+        </scene>
+        <!--View Controller-->
+        <scene sceneID="tne-QT-ifu">
+            <objects>
+                <viewController id="BYZ-38-t0r" customClass="ViewController" customModule="Location_Manager" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="8bC-Xf-vdC">
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <mapView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" mapType="standard" translatesAutoresizingMaskIntoConstraints="NO" id="4gJ-dX-vrF">
+                                <rect key="frame" x="0.0" y="0.0" width="414" height="826"/>
+                            </mapView>
+                            <button opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="UD0-XH-Khp">
+                                <rect key="frame" x="0.0" y="826" width="414" height="70"/>
+                                <color key="backgroundColor" red="0.68965832449999998" green="0.27995037639999998" blue="0.038316058909999999" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="70" id="efd-fv-XNK"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" type="system" weight="semibold" pointSize="17"/>
+                                <state key="normal" title="STOP">
+                                    <color key="titleColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                </state>
+                                <connections>
+                                    <action selector="stopUdatinglocation:" destination="BYZ-38-t0r" eventType="touchUpInside" id="eMS-KS-FuF"/>
+                                </connections>
+                            </button>
+                        </subviews>
+                        <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>
+                        <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                        <constraints>
+                            <constraint firstItem="4gJ-dX-vrF" firstAttribute="top" secondItem="8bC-Xf-vdC" secondAttribute="top" id="I29-s8-8py"/>
+                            <constraint firstItem="4gJ-dX-vrF" firstAttribute="trailing" secondItem="6Tk-OE-BBY" secondAttribute="trailing" id="SwW-pg-v0o"/>
+                            <constraint firstItem="UD0-XH-Khp" firstAttribute="bottom" secondItem="8bC-Xf-vdC" secondAttribute="bottom" id="U0o-OE-4Ex"/>
+                            <constraint firstItem="UD0-XH-Khp" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" id="XMd-4f-KWl"/>
+                            <constraint firstItem="4gJ-dX-vrF" firstAttribute="trailing" secondItem="6Tk-OE-BBY" secondAttribute="trailing" id="aHd-nE-67o"/>
+                            <constraint firstItem="UD0-XH-Khp" firstAttribute="top" secondItem="4gJ-dX-vrF" secondAttribute="bottom" id="oda-Bd-MI6"/>
+                            <constraint firstItem="4gJ-dX-vrF" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" id="uMT-s4-N68"/>
+                            <constraint firstItem="UD0-XH-Khp" firstAttribute="trailing" secondItem="6Tk-OE-BBY" secondAttribute="trailing" id="vzo-0Y-J7i"/>
+                            <constraint firstItem="4gJ-dX-vrF" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" id="zvD-KG-z9S"/>
+                        </constraints>
+                    </view>
+                    <navigationItem key="navigationItem" id="5aE-9G-fvS"/>
+                    <connections>
+                        <outlet property="mapView" destination="4gJ-dX-vrF" id="Vyi-3A-ihb"/>
+                        <outlet property="stopButton" destination="UD0-XH-Khp" id="Sh6-P3-OVw"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="926.08695652173924" y="76.339285714285708"/>
+        </scene>
+        <!--Navigation Controller-->
+        <scene sceneID="9YS-tf-yrf">
+            <objects>
+                <navigationController automaticallyAdjustsScrollViewInsets="NO" id="WFi-U9-DXV" sceneMemberID="viewController">
+                    <toolbarItems/>
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" id="dph-4X-bCe">
+                        <rect key="frame" x="0.0" y="44" width="414" height="44"/>
+                        <autoresizingMask key="autoresizingMask"/>
+                    </navigationBar>
+                    <nil name="viewControllers"/>
+                    <connections>
+                        <segue destination="E5V-tT-bSg" kind="relationship" relationship="rootViewController" id="UBV-oT-MfM"/>
+                    </connections>
+                </navigationController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="Pae-tC-cmB" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="-730.43478260869574" y="86.383928571428569"/>
+        </scene>
+    </scenes>
+    <resources>
+        <systemColor name="systemBackgroundColor">
+            <color white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+        </systemColor>
+        <systemColor name="systemOrangeColor">
+            <color red="1" green="0.58431372549019611" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+        </systemColor>
+    </resources>
+</document>
